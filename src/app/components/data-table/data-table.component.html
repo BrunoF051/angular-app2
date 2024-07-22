@@ -1,0 +1,29 @@
+<nz-table
+  nzShowSizeChanger
+  [nzData]="listOfRandomUser"
+  [nzFrontPagination]="false"
+  [nzLoading]="loading"
+  [nzTotal]="total"
+  [nzPageSize]="pageSize"
+  [nzPageIndex]="pageIndex"
+  (nzQueryParams)="onQueryParamsChange($event)"
+>
+  <thead>
+    <tr>
+      <th nzColumnKey="name" [nzSortFn]="true">Name</th>
+      <th nzColumnKey="gender" [nzFilters]="filterGender" [nzFilterFn]="true">
+        Gender
+      </th>
+      <th nzColumnKey="email" [nzSortFn]="true">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (user of listOfRandomUser; track user.name) {
+      <tr>
+        <td>{{ user.name.first }} {{ user.name.last }}</td>
+        <td>{{ user.gender }}</td>
+        <td>{{ user.email }}</td>
+      </tr>
+    }
+  </tbody>
+</nz-table>
