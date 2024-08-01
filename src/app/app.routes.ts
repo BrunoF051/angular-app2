@@ -3,8 +3,8 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/welcome' },
   {
-    path: 'welcome',
+    path: 'app',
     loadChildren: () =>
-      import('./pages/welcome/welcome.routes').then((m) => m.WELCOME_ROUTES),
+      import('./pages/welcome/welcome.routes').then((m) => m.APP_ROUTES),
   },
 ];

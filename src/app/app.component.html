@@ -22,14 +22,15 @@
       <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a [routerLink]="['/welcome']">Welcome</a>
+            <a [routerLink]="['/app']">Welcome</a>
           </li>
-          <li nz-menu-item nzMatchRouter>
-            <a [routerLink]="['/welcome/table']">Data Table</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Workplace</a>
-          </li>
+          @for (route of routes; track route.path) {
+            @if (route.path !== "**" && route.path !== "") {
+              <li nz-menu-item nzMatchRouter>
+                <a [routerLink]="['/app/' + route.path]">{{ route.path }}</a>
+              </li>
+            }
+          }
         </ul>
       </li>
       <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">

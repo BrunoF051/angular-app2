@@ -1,6 +1,6 @@
 <nz-table
   nzShowSizeChanger
-  [nzData]="listOfRandomUser"
+  [nzData]="dataSource"
   [nzFrontPagination]="false"
   [nzLoading]="loading"
   [nzTotal]="total"
@@ -18,11 +18,11 @@
     </tr>
   </thead>
   <tbody>
-    @for (user of listOfRandomUser; track user.name) {
+    @for (items of dataSource; track items.name) {
       <tr>
-        <td>{{ user.name.first }} {{ user.name.last }}</td>
-        <td>{{ user.gender }}</td>
-        <td>{{ user.email }}</td>
+        <td>{{ items.name.first }} {{ items.name.last }}</td>
+        <td>{{ items.gender }}</td>
+        <td>{{ items.email }}</td>
       </tr>
     }
   </tbody>

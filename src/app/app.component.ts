@@ -4,6 +4,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { APP_ROUTES } from './pages/welcome/welcome.routes';
 
 @Component({
   selector: 'app-root',
@@ -22,4 +23,5 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 })
 export class AppComponent {
   isCollapsed = false;
+  routes = APP_ROUTES;
 }

@@ -21,7 +21,7 @@ interface RandomUser {
 })
 export class DataTableComponent implements OnInit {
   total = 1;
-  listOfRandomUser: RandomUser[] = [];
+  dataSource: RandomUser[] = [];
   loading = true;
   pageSize = 10;
   pageIndex = 1;
@@ -43,7 +43,7 @@ export class DataTableComponent implements OnInit {
       .subscribe((data: { results: RandomUser[] }) => {
         this.loading = false;
         this.total = 200; // mock the total data here
-        this.listOfRandomUser = data.results;
+        this.dataSource = data.results;
       });
   }
 
