@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NzTableModule } from 'ng-zorro-antd/table';
-import { NzTableQueryParams } from 'ng-zorro-antd/table';
-import { RandomUserService } from '../../services/random-user.service';
+import { NzTableModule, NzTableQueryParams } from 'ng-zorro-antd/table';
+import { RandomUserService } from 'services/random-user.service';
 
 interface RandomUser {
   gender: string;
@@ -35,7 +34,7 @@ export class DataTableComponent implements OnInit {
     pageSize: number,
     sortField: string | null,
     sortOrder: string | null,
-    filter: Array<{ key: string; value: string[] }>,
+    filter: Array<{ key: string; value: string[] }>
   ): void {
     this.loading = true;
     this.randomUserService
