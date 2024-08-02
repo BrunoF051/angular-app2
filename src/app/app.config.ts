@@ -31,7 +31,7 @@ const initializeKeycloak = (keycloak: KeycloakService) => async () =>
     initOptions: {
       onLoad: 'check-sso',
       silentCheckSsoRedirectUri:
-        window.location.origin + 'app/assets/silent-check-sso.html',
+        window.location.origin + '/assets/silent-check-sso.html',
       checkLoginIframe: false,
       redirectUri: environment.keycloak.redirectUri,
     },
@@ -46,13 +46,13 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(FormsModule),
     provideAnimationsAsync(),
     provideHttpClient(withFetch()),
-    KeycloakService,
     {
       provide: APP_INITIALIZER,
       useFactory: initializeKeycloak,
       multi: true,
       deps: [KeycloakService],
     },
+    KeycloakService,
     provideUserIdleConfig({
       idle: environment.idleConfig.idle,
       ping: environment.idleConfig.ping,
