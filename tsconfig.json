@@ -23,8 +23,9 @@
     "paths": {
       "app/*": ["./src/app/*"],
       "pages/*": ["./src/app/pages/*"],
+      "services/*": ["./src/app/services/*"],
       "components/*": ["./src/app/components/*"],
-      "services/*": ["./src/app/services/*"]
+      "environments/*": ["./src/environments/*"]
     }
   },
 

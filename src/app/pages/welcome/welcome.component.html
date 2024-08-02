@@ -1,1 +1,7 @@
-<p>Implement Login</p>
+<div class="content">
+  <span class="title">Main page</span>
+</div>
+
+@if (!isLoggedIn) {
+  <a roles="button" (click)="redirectToLogin()">Login</a>
+}

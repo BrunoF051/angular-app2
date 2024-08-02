@@ -13,8 +13,29 @@ import it from '@angular/common/locales/it';
 import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { environment } from '../environments/environment';
+import { APP_INITIALIZER } from '@angular/core';
+import { KeycloakService } from 'keycloak-angular';
+import { provideUserIdleConfig } from 'angular-user-idle';
 
 registerLocaleData(it);
+
+const initializeKeycloak = (keycloak: KeycloakService) => async () =>
+  keycloak.init({
+    config: {
+      url: environment.keycloak.authority,
+      realm: environment.keycloak.realm,
+      clientId: environment.keycloak.clientId,
+    },
+    loadUserProfileAtStartUp: true,
+    initOptions: {
+      onLoad: 'check-sso',
+      silentCheckSsoRedirectUri:
+        window.location.origin + 'app/assets/silent-check-sso.html',
+      checkLoginIframe: false,
+      redirectUri: environment.keycloak.redirectUri,
+    },
+  });
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -25,5 +46,17 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(FormsModule),
     provideAnimationsAsync(),
     provideHttpClient(withFetch()),
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeKeycloak,
+      multi: true,
+      deps: [KeycloakService],
+    },
+    KeycloakService,
+    provideUserIdleConfig({
+      idle: environment.idleConfig.idle,
+      ping: environment.idleConfig.ping,
+      timeout: environment.idleConfig.timeout,
+    }),
   ],
 };
