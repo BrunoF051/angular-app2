@@ -46,13 +46,13 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(FormsModule),
     provideAnimationsAsync(),
     provideHttpClient(withFetch()),
+    KeycloakService,
     {
       provide: APP_INITIALIZER,
       useFactory: initializeKeycloak,
       multi: true,
       deps: [KeycloakService],
     },
-    KeycloakService,
     provideUserIdleConfig({
       idle: environment.idleConfig.idle,
       ping: environment.idleConfig.ping,

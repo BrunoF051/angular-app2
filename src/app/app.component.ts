@@ -9,6 +9,7 @@ import { AuthorizationService } from './services/authorization.service';
 import { UserIdleService } from 'angular-user-idle';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { DestroyRef } from '@angular/core';
+import { KeycloakAngularModule } from 'keycloak-angular';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,7 @@ import { DestroyRef } from '@angular/core';
     NzMenuModule,
     RouterLink,
     RouterLinkActive,
+    KeycloakAngularModule,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
