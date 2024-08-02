@@ -10,6 +10,12 @@ import { UserIdleService } from 'angular-user-idle';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { DestroyRef } from '@angular/core';
 import { KeycloakAngularModule } from 'keycloak-angular';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
+import { NzFlexModule } from 'ng-zorro-antd/flex';
+import { NzGridModule } from 'ng-zorro-antd/grid';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +25,13 @@ import { KeycloakAngularModule } from 'keycloak-angular';
     RouterOutlet,
     NzIconModule,
     NzLayoutModule,
+    NzSpaceModule,
     NzMenuModule,
+    NzDividerModule,
+    NzGridModule,
+    NzFlexModule,
+    NzPageHeaderModule,
+    NzButtonModule,
     RouterLink,
     RouterLinkActive,
     KeycloakAngularModule,
@@ -30,6 +42,8 @@ import { KeycloakAngularModule } from 'keycloak-angular';
 export class AppComponent {
   isCollapsed = false;
   routes = APP_ROUTES;
+  isLoggedIn = this.authorizationservice.isLoggedIn();
+
   constructor(
     private authorizationservice: AuthorizationService,
     private userIdleService: UserIdleService,

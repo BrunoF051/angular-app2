@@ -19,43 +19,52 @@
       nzMode="inline"
       [nzInlineCollapsed]="isCollapsed"
     >
-      <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+      <li nz-submenu nzOpen nzTitle="Welcome" nzIcon="login">
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a [routerLink]="['/app']">Welcome</a>
+            <a [routerLink]="['/app']">Login</a>
           </li>
-          @for (route of routes; track route.path) {
-            @if (
-              route.path !== "**" &&
-              route.path !== "" &&
-              route.path !== "logout"
-            ) {
-              <li nz-menu-item nzMatchRouter>
-                <a [routerLink]="['/app/' + route.path]">{{ route.path }}</a>
-              </li>
+        </ul>
+      </li>
+      @if (isLoggedIn) {
+        <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+          <ul>
+            @for (route of routes; track route.path) {
+              @if (
+                route.path !== "**" &&
+                route.path !== "" &&
+                route.path !== "logout"
+              ) {
+                <li nz-menu-item nzMatchRouter>
+                  <a [routerLink]="['/app/' + route.path]">{{ route.path }}</a>
+                </li>
+              }
             }
-          }
-        </ul>
-      </li>
-      <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a>Basic Form</a>
-          </li>
-        </ul>
-      </li>
+          </ul>
+        </li>
+      }
     </ul>
   </nz-sider>
   <nz-layout>
     <nz-header>
       <div class="app-header">
-        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-          <span
-            class="trigger"
-            nz-icon
-            [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-          ></span>
-        </span>
+        <div nz-row nzJustify="space-between">
+          <div nz-col nzSpan="10">
+            <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+              <span
+                class="trigger"
+                nz-icon
+                [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+              ></span>
+            </span>
+          </div>
+          <div nz-col nzSpan="10"></div>
+          <div nz-col nzSpan="4">
+            <button nz-button nzType="primary" nzShape="circle">
+              <span nz-icon nzType="search"></span>
+            </button>
+          </div>
+        </div>
       </div>
     </nz-header>
     <nz-content>
