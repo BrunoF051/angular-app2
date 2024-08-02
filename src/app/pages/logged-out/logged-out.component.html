@@ -1,1 +1,8 @@
 <p>You have benn logged out</p>
+<div>
+  @if (!isLoggedIn) {
+    <button nz-button nzType="primary" (click)="redirectToLogin()">
+      Login
+    </button>
+  }
+</div>

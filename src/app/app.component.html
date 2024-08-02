@@ -8,9 +8,9 @@
     [nzTrigger]="null"
   >
     <div class="sidebar-logo">
-      <a href="https://ng.ant.design/" target="_blank">
+      <a [routerLink]="['/app']">
         <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
-        <h1>Ant Design Of Angular</h1>
+        <h1>Gestionale</h1>
       </a>
     </div>
     <ul
@@ -25,7 +25,11 @@
             <a [routerLink]="['/app']">Welcome</a>
           </li>
           @for (route of routes; track route.path) {
-            @if (route.path !== "**" && route.path !== "") {
+            @if (
+              route.path !== "**" &&
+              route.path !== "" &&
+              route.path !== "logout"
+            ) {
               <li nz-menu-item nzMatchRouter>
                 <a [routerLink]="['/app/' + route.path]">{{ route.path }}</a>
               </li>

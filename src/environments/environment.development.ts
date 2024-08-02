@@ -3,7 +3,7 @@ export const environment = {
   keycloak: {
     authority: 'http://localhost',
     redirectUri: 'http://localhost:4200',
-    postLogoutRedirectUri: 'http://localhost:4200/logout',
+    postLogoutRedirectUri: 'http://localhost:4200/app/logout',
     realm: 'TestRealm',
     clientId: 'public',
   },
