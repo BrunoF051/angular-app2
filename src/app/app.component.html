@@ -48,7 +48,7 @@
   <nz-layout>
     <nz-header>
       <div class="app-header">
-        <div nz-row nzJustify="space-between">
+        <div nz-row nzJustify="space-between" [nzGutter]="16">
           <div nz-col nzSpan="10">
             <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
               <span
@@ -59,10 +59,47 @@
             </span>
           </div>
           <div nz-col nzSpan="10"></div>
-          <div nz-col nzSpan="4">
-            <button nz-button nzType="primary" nzShape="circle">
-              <span nz-icon nzType="search"></span>
-            </button>
+          <div
+            nz-col
+            nzSpan="4"
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: flex-end;
+            "
+          >
+            <nz-space nzSize="small" style="margin-right: 25px">
+              @if (isLoggedIn) {
+                <button
+                  *nzSpaceItem
+                  nz-button
+                  nzType="primary"
+                  nzShape="circle"
+                >
+                  <span nz-icon nzType="search"></span>
+                </button>
+                <button
+                  *nzSpaceItem
+                  nz-button
+                  nzType="primary"
+                  nzShape="circle"
+                  nz-dropdown
+                  [nzDropdownMenu]="menu"
+                >
+                  <span nz-icon nzType="user"></span>
+                </button>
+                <nz-dropdown-menu #menu="nzDropdownMenu">
+                  <ul nz-menu nzSelectable>
+                    <li nz-menu-item>Profile</li>
+                    <li nz-menu-item>2nd menu item</li>
+                    <li nz-menu-item>3rd menu item</li>
+                    <li nz-menu-item nzDanger (click)="logout()">
+                      logout <span nz-icon nzType="logout"></span>
+                    </li>
+                  </ul>
+                </nz-dropdown-menu>
+              }
+            </nz-space>
           </div>
         </div>
       </div>

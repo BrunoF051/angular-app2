@@ -16,7 +16,7 @@ import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { NzFlexModule } from 'ng-zorro-antd/flex';
 import { NzGridModule } from 'ng-zorro-antd/grid';
-
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -35,6 +35,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
     RouterLink,
     RouterLinkActive,
     KeycloakAngularModule,
+    NzDropDownModule,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -66,5 +67,8 @@ export class AppComponent {
           this.userIdleService.resetTimer();
         });
     }
+  }
+  logout() {
+    this.authorizationservice.logout();
   }
 }
