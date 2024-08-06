@@ -10,7 +10,7 @@
     <div class="sidebar-logo">
       <a [routerLink]="['/app']">
         <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
-        <h1>Gestionale</h1>
+        <h1 i18n>Management</h1>
       </a>
     </div>
     <ul
@@ -19,15 +19,21 @@
       nzMode="inline"
       [nzInlineCollapsed]="isCollapsed"
     >
-      <li nz-submenu nzOpen nzTitle="Welcome" nzIcon="login">
+      <li i18n-nzTitle nz-submenu nzOpen nzTitle="Welcome" nzIcon="login">
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a [routerLink]="['/app']">Login</a>
+            <a i18n [routerLink]="['/app']">Login</a>
           </li>
         </ul>
       </li>
       @if (isLoggedIn) {
-        <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+        <li
+          i18n-nzTitle
+          nz-submenu
+          nzOpen
+          nzTitle="Dashboard"
+          nzIcon="dashboard"
+        >
           <ul>
             @for (route of routes; track route.path) {
               @if (

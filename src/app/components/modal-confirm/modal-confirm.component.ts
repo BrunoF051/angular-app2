@@ -41,11 +41,11 @@ export class ModalConfirmComponent {
 
   showConfirm(): void {
     this.modalRef = this.modal.confirm({
-      nzTitle: this.confirmConfig.title,
-      nzContent: this.confirmConfig.description,
+      nzTitle: $localize`${this.confirmConfig?.title}`,
+      nzContent: $localize`${this.confirmConfig.description}`,
       nzOnOk: this.confirmConfig.onConfirm,
-      nzOkText: this.confirmConfig.okText,
-      nzCancelText: this.confirmConfig.cancelText,
+      nzOkText: $localize`${this.confirmConfig.okText}`,
+      nzCancelText: $localize`${this.confirmConfig.cancelText}`,
       nzOkType: this.confirmConfig.okType,
       nzOkDanger: this.confirmConfig.okDanger,
     });
@@ -53,12 +53,12 @@ export class ModalConfirmComponent {
 
   showDeleteConfirm(): void {
     this.modalRef = this.modal.confirm({
-      nzTitle: this.deleteConfig.title,
-      nzContent: this.deleteConfig.description,
+      nzTitle: $localize`${this.deleteConfig.title}`,
+      nzContent: $localize`${this.deleteConfig.description}`,
       nzOnOk: this.deleteConfig.onConfirm,
       nzOnCancel: this.deleteConfig.onCancel,
-      nzOkText: this.deleteConfig.okText,
-      nzCancelText: this.deleteConfig.cancelText,
+      nzOkText: $localize`${this.deleteConfig.okText}`,
+      nzCancelText: $localize`${this.deleteConfig.cancelText}`,
       nzOkType: this.deleteConfig.okType,
       nzOkDanger: this.deleteConfig.okDanger,
     });

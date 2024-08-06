@@ -5,7 +5,7 @@
     nzOffset="6"
     style="display: flex; align-items: center; justify-content: center"
   >
-    <h1 nz-typography>Welcome</h1>
+    <h1 i18n nz-typography>Welcome</h1>
   </div>
 </div>
 <div nz-row>
@@ -16,7 +16,7 @@
     style="display: flex; align-items: center; justify-content: center"
   >
     @if (!isLoggedIn) {
-      <button nz-button nzType="primary" (click)="redirectToLogin()">
+      <button i18n nz-button nzType="primary" (click)="redirectToLogin()">
         Login
       </button>
     }
