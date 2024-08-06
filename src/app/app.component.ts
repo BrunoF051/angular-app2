@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -17,6 +17,8 @@ import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { NzFlexModule } from 'ng-zorro-antd/flex';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { ModalConfirmComponent } from 'components/modal-confirm/modal-confirm.component';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -36,6 +38,8 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
     RouterLinkActive,
     KeycloakAngularModule,
     NzDropDownModule,
+    NzModalModule,
+    ModalConfirmComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -44,6 +48,17 @@ export class AppComponent {
   isCollapsed = false;
   routes = APP_ROUTES;
   isLoggedIn = this.authorizationservice.isLoggedIn();
+  deleteConfig = {
+    title: 'Are you sure you want to log out?',
+    description: 'You are going to be logged out.',
+    onConfirm: () => this.logout(),
+    onCancel: () => this.closeConfirmLogoutModal(),
+    okText: 'Logout',
+    cancelText: 'Cancel',
+  };
+
+  @ViewChild(ModalConfirmComponent)
+  modalConfirmComponent!: ModalConfirmComponent;
 
   constructor(
     private authorizationservice: AuthorizationService,
@@ -68,7 +83,16 @@ export class AppComponent {
         });
     }
   }
-  logout() {
+
+  logout(): void {
     this.authorizationservice.logout();
+  }
+
+  showConfirmLogoutModal(): void {
+    this.modalConfirmComponent.showDeleteConfirm();
+  }
+
+  closeConfirmLogoutModal(): void {
+    this.modalConfirmComponent.destroyModal();
   }
 }
