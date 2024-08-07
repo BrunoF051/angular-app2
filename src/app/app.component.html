@@ -42,7 +42,7 @@
                 route.path !== "logout"
               ) {
                 <li nz-menu-item nzMatchRouter>
-                  <a [routerLink]="['/app/' + route.path]">{{ route.path }}</a>
+                  <a [routerLink]="['/app/' + route.path]">{{ route.title }}</a>
                 </li>
               }
             }
@@ -82,7 +82,13 @@
                   nzType="primary"
                   nzShape="circle"
                 >
-                  <span nz-icon nzType="search"></span>
+                  <span
+                    i18n-nzTooltipTitle
+                    nz-tooltip
+                    nzTooltipTitle="search"
+                    nz-icon
+                    nzType="search"
+                  ></span>
                 </button>
                 <button
                   *nzSpaceItem
@@ -96,9 +102,9 @@
                 </button>
                 <nz-dropdown-menu #menu="nzDropdownMenu">
                   <ul nz-menu nzSelectable>
-                    <li nz-menu-item>Profile</li>
-                    <li nz-menu-item>2nd menu item</li>
-                    <li nz-menu-item>3rd menu item</li>
+                    <li i18n nz-menu-item>Profile</li>
+                    <li i18n nz-menu-item>2nd menu item</li>
+                    <li i18n nz-menu-item>3rd menu item</li>
                     <li
                       nz-menu-item
                       nzDanger

@@ -19,6 +19,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { ModalConfirmComponent } from 'components/modal-confirm/modal-confirm.component';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -40,6 +41,7 @@ import { ModalConfirmComponent } from 'components/modal-confirm/modal-confirm.co
     NzDropDownModule,
     NzModalModule,
     ModalConfirmComponent,
+    NzToolTipModule,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -55,6 +57,7 @@ export class AppComponent {
     onCancel: () => this.closeConfirmLogoutModal(),
     okText: 'Logout',
     cancelText: 'Cancel',
+    okDanger: true,
   };
 
   @ViewChild(ModalConfirmComponent)

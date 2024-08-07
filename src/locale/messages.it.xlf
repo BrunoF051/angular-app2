@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en-US" datatype="plaintext" original="ng2.template" target-language="it-IT">
+  <file source-language="en-US" target-language="it" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="7615147220727762615" datatype="html">
         <source>Management</source>
-        <target state="translated">Gestione</target>
+        <target>Gestione</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
           <context context-type="linenumber">13,14</context>
@@ -12,7 +12,7 @@
       </trans-unit>
       <trans-unit id="3492007542396725315" datatype="html">
         <source>Welcome</source>
-        <target state="translated">Benvenuto</target>
+        <target>Benvenuto</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
           <context context-type="linenumber">22</context>
@@ -21,10 +21,14 @@
           <context context-type="sourcefile">src/app/pages/welcome/welcome.component.html</context>
           <context context-type="linenumber">8,9</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/welcome/welcome.routes.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="2454050363478003966" datatype="html">
         <source>Login</source>
-        <target state="translated">Accedi</target>
+        <target>Accesso</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
           <context context-type="linenumber">25,26</context>
@@ -32,15 +36,47 @@
       </trans-unit>
       <trans-unit id="6570363013146073520" datatype="html">
         <source>Dashboard</source>
-        <target state="translated">Bacheca</target>
+        <target>Pannello di controllo</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
           <context context-type="linenumber">34,35</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="7158592746571420879" datatype="html">
+        <source>search</source>
+        <target>ricerca</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4915431133669985304" datatype="html">
+        <source>Profile</source>
+        <target>Profilo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">99,100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="952059840068946652" datatype="html">
+        <source>2nd menu item</source>
+        <target>2° elemento del menu</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">100,101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6534682861051046193" datatype="html">
+        <source>3rd menu item</source>
+        <target>3° elemento del menu</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">101,102</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="1737753151350322492" datatype="html">
-        <source><x id="PH" equiv-text="this.confirmConfig.title"/></source>
-        <target state="needs-translation"/>
+        <source><x id="PH" equiv-text="this.confirmConfig?.title"/></source>
+        <target><x id="PH" equiv-text="this.confirmConfig?.title"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/modal-confirm/modal-confirm.component.ts</context>
           <context context-type="linenumber">44</context>
@@ -76,7 +112,7 @@
       </trans-unit>
       <trans-unit id="3439538517671911682" datatype="html">
         <source>You have been logged out</source>
-        <target state="translated">L'utente è stato disconnesso</target>
+        <target>Sei stato disconnesso</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/logged-out/logged-out.component.html</context>
           <context context-type="linenumber">8,9</context>
@@ -84,7 +120,7 @@
       </trans-unit>
       <trans-unit id="303433502826318614" datatype="html">
         <source>Page-not-found!</source>
-        <target state="translated">Pagina non trovata!</target>
+        <target>Pagina non trovata!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/page-not-found/page-not-found.component.html</context>
           <context context-type="linenumber">1,2</context>
@@ -92,10 +128,34 @@
       </trans-unit>
       <trans-unit id="1908285951500318953" datatype="html">
         <source> Login </source>
-        <target state="translated"> Accesso </target>
+        <target> Accedi </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/welcome/welcome.component.html</context>
           <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4555457172864212828" datatype="html">
+        <source>Users</source>
+        <target>Utenti</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/welcome/welcome.routes.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3797778920049399855" datatype="html">
+        <source>Logout</source>
+        <target>Disconnetti</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/welcome/welcome.routes.ts</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2275328567992347600" datatype="html">
+        <source>Page not found</source>
+        <target>Pagina non trovata</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/welcome/welcome.routes.ts</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
     </body>

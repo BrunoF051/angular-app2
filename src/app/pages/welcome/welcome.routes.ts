@@ -13,12 +13,25 @@ export enum AppRoutes {
 }
 
 export const APP_ROUTES: Routes = [
-  { path: AppRoutes.Main, component: WelcomeComponent },
+  {
+    path: AppRoutes.Main,
+    component: WelcomeComponent,
+    title: $localize`Welcome`,
+  },
   {
     path: AppRoutes.Users,
     canActivate: [authGuard],
     component: UsersComponent,
+    title: $localize`Users`,
   },
-  { path: AppRoutes.Logout, component: LoggedOutComponent },
-  { path: AppRoutes.NotFound, component: PageNotFoundComponent },
+  {
+    path: AppRoutes.Logout,
+    component: LoggedOutComponent,
+    title: $localize`Logout`,
+  },
+  {
+    path: AppRoutes.NotFound,
+    component: PageNotFoundComponent,
+    title: $localize`Page not found`,
+  },
 ];

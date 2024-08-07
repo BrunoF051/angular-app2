@@ -6,7 +6,7 @@
     "angular-app2": {
       "i18n": {
         "sourceLocale": "en-US",
-        "locales": { "it-IT": "src/locale/messages.it.xlf" }
+        "locales": { "it": "src/locale/messages.it.xlf" }
       },
       "projectType": "application",
       "schematics": {
@@ -21,7 +21,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "localize": ["it-IT"],
+            "localize": ["it"],
             "outputPath": "dist/angular-app2",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -76,6 +76,9 @@
                   "with": "src/environments/environment.development.ts"
                 }
               ]
+            },
+            "it": {
+              "localize": ["it"]
             }
           },
           "defaultConfiguration": "production"
@@ -88,6 +91,9 @@
             },
             "development": {
               "buildTarget": "angular-app2:build:development"
+            },
+            "it": {
+              "buildTarget": "angular-app2:build:development,it"
             }
           },
           "defaultConfiguration": "development"
