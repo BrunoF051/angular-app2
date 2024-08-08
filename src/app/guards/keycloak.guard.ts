@@ -42,7 +42,7 @@ export class AuthGuard extends KeycloakAuthGuard {
     if (isAllowed) {
       return true;
     } else {
-      // you can redirect unauthorized route to error page
+      //TODO: you can redirect unauthorized route to error page
       this.router.navigate(['error-page']);
       return false;
     }
