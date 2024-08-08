@@ -66,6 +66,20 @@
           <context context-type="linenumber">107,108</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="8953033926734869941" datatype="html">
+        <source>Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/data-table/data-table.component.html</context>
+          <context context-type="linenumber">13,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2828099469321045929" datatype="html">
+        <source> Gender </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/data-table/data-table.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="1737753151350322492" datatype="html">
         <source><x id="PH" equiv-text="this.confirmConfig?.title"/></source>
         <context-group purpose="location">

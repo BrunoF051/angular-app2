@@ -21,6 +21,7 @@ export const APP_ROUTES: Routes = [
   {
     path: AppRoutes.Users,
     canActivate: [authGuard],
+    data: { roles: ['user'] },
     component: UsersComponent,
     title: $localize`Users`,
   },

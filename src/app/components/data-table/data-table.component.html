@@ -10,8 +10,13 @@
 >
   <thead>
     <tr>
-      <th nzColumnKey="name" [nzSortFn]="true">Name</th>
-      <th nzColumnKey="gender" [nzFilters]="filterGender" [nzFilterFn]="true">
+      <th i18n nzColumnKey="name" [nzSortFn]="true">Name</th>
+      <th
+        i18n
+        nzColumnKey="gender"
+        [nzFilters]="filterGender"
+        [nzFilterFn]="true"
+      >
         Gender
       </th>
       <th nzColumnKey="email" [nzSortFn]="true">Email</th>
@@ -19,11 +24,11 @@
   </thead>
   <tbody>
     @for (items of dataSource; track items.name) {
-    <tr>
-      <td>{{ items.name.first }} {{ items.name.last }}</td>
-      <td>{{ items.gender }}</td>
-      <td>{{ items.email }}</td>
-    </tr>
+      <tr>
+        <td>{{ items.name.first }} {{ items.name.last }}</td>
+        <td>{{ items.gender }}</td>
+        <td>{{ items.email }}</td>
+      </tr>
     }
   </tbody>
 </nz-table>
