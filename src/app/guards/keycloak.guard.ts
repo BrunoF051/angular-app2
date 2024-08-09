@@ -9,7 +9,7 @@ import { KeycloakAuthGuard, KeycloakService } from 'keycloak-angular';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard extends KeycloakAuthGuard {
+export class KeycloakGuard extends KeycloakAuthGuard {
   constructor(
     protected override readonly router: Router,
     protected readonly keycloak: KeycloakService,
@@ -43,7 +43,7 @@ export class AuthGuard extends KeycloakAuthGuard {
       return true;
     } else {
       //TODO: you can redirect unauthorized route to error page
-      this.router.navigate(['error-page']);
+      this.router.navigate(['/app/not-authorized']);
       return false;
     }
   }

@@ -21,7 +21,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/welcome/welcome.routes.ts</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2454050363478003966" datatype="html">
@@ -42,28 +42,28 @@
         <source>search</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">89</context>
+          <context context-type="linenumber">85</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4915431133669985304" datatype="html">
         <source>Profile</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">105,106</context>
+          <context context-type="linenumber">101,102</context>
         </context-group>
       </trans-unit>
       <trans-unit id="952059840068946652" datatype="html">
         <source>2nd menu item</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">106,107</context>
+          <context context-type="linenumber">102,103</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6534682861051046193" datatype="html">
         <source>3rd menu item</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">107,108</context>
+          <context context-type="linenumber">103,104</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8953033926734869941" datatype="html">
@@ -140,21 +140,28 @@
         <source>Users</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/welcome/welcome.routes.ts</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3797778920049399855" datatype="html">
         <source>Logout</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/welcome/welcome.routes.ts</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2275328567992347600" datatype="html">
         <source>Page not found</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/welcome/welcome.routes.ts</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5689987897661891535" datatype="html">
+        <source>Admin Page</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/welcome/welcome.routes.ts</context>
+          <context context-type="linenumber">47</context>
         </context-group>
       </trans-unit>
     </body>

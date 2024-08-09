@@ -7,5 +7,5 @@ export const environment = {
     realm: 'TestRealm',
     clientId: 'public',
   },
-  idleConfig: { idle: 10, timeout: 120, ping: 10 },
+  idleConfig: { idle: 120, timeout: 120, ping: 60 },
 };

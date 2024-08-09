@@ -17,5 +17,9 @@ export class WelcomeComponent implements OnInit {
   redirectToLogin() {
     return this.authorizationService.redirectToLoginPage();
   }
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.isLoggedIn) {
+      console.log('user-roles', this.authorizationService.getUserRoles());
+    }
+  }
 }

@@ -36,11 +36,7 @@
         >
           <ul>
             @for (route of routes; track route.path) {
-              @if (
-                route.path !== "**" &&
-                route.path !== "" &&
-                route.path !== "logout"
-              ) {
+              @if (menuItemVisibility(route)) {
                 <li nz-menu-item nzMatchRouter>
                   <a [routerLink]="['/app/' + route.path]">{{ route.title }}</a>
                 </li>

@@ -1,6 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import {
+  Route,
+  RouterLink,
+  RouterLinkActive,
+  RouterOutlet,
+} from '@angular/router';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
@@ -49,7 +54,8 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 export class AppComponent {
   isCollapsed = false;
   routes = APP_ROUTES;
-  isLoggedIn = this.authorizationservice.isLoggedIn();
+  isLoggedIn = this.authorizationService.isLoggedIn();
+  userRoles = this.authorizationService.getUserRoles();
   deleteConfig = {
     title: 'Are you sure you want to log out?',
     description: 'You are going to be logged out.',
@@ -64,13 +70,13 @@ export class AppComponent {
   modalConfirmComponent!: ModalConfirmComponent;
 
   constructor(
-    private authorizationservice: AuthorizationService,
+    private authorizationService: AuthorizationService,
     private userIdleService: UserIdleService,
     private destroyRef: DestroyRef,
   ) {}
 
   ngOnInit(): void {
-    if (this.authorizationservice.isLoggedIn()) {
+    if (this.authorizationService.isLoggedIn()) {
       this.userIdleService.startWatching();
       this.userIdleService
         .onTimerStart()
@@ -81,14 +87,14 @@ export class AppComponent {
         .pipe(takeUntilDestroyed(this.destroyRef))
         .subscribe(() => {
           alert('Your session has timed out. Please log in again.');
-          this.authorizationservice.logout();
+          this.authorizationService.logout();
           this.userIdleService.resetTimer();
         });
     }
   }
 
   logout(): void {
-    this.authorizationservice.logout();
+    this.authorizationService.logout();
   }
 
   showConfirmLogoutModal(): void {
@@ -97,5 +103,22 @@ export class AppComponent {
 
   closeConfirmLogoutModal(): void {
     this.modalConfirmComponent.destroyModal();
+  }
+
+  menuItemVisibility(route: Route): boolean {
+    const { path, data } = route;
+    const notShowingPaths = ['', '**', 'logout', 'not-authorized'];
+
+    if (data && path) {
+      const isRoleRequired = data['roles'].length > 0;
+      if (!isRoleRequired) {
+        return !notShowingPaths.includes(path);
+      }
+      return data?.['roles']?.every((role: string) =>
+        this.userRoles.includes(role),
+      );
+    } else {
+      return false;
+    }
   }
 }

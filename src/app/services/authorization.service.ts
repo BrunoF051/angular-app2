@@ -16,6 +16,10 @@ export class AuthorizationService {
     return this.keycloakService.getUsername();
   }
 
+  getUserRoles(): string[] {
+    return this.keycloakService.getUserRoles();
+  }
+
   isLoggedIn(): boolean {
     return this.keycloakService.isLoggedIn();
   }

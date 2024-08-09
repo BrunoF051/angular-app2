@@ -35,6 +35,7 @@ const initializeKeycloak = (keycloak: KeycloakService) => async () =>
       checkLoginIframe: false,
       redirectUri: environment.keycloak.redirectUri,
     },
+    bearerExcludedUrls: ['/assets', '/clients/public'],
   });
 
 export const appConfig: ApplicationConfig = {
