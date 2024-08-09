@@ -21,7 +21,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/welcome/welcome.routes.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2454050363478003966" datatype="html">
@@ -115,11 +115,36 @@
           <context context-type="linenumber">61</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="807260493430607239" datatype="html">
+        <source>admin-page works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/admin-page/admin-page.component.html</context>
+          <context context-type="linenumber">1,2</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="3439538517671911682" datatype="html">
         <source>You have been logged out</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/logged-out/logged-out.component.html</context>
           <context context-type="linenumber">8,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8691454999687322095" datatype="html">
+        <source>Not authorized</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/not-authorized/not-authorized.component.html</context>
+          <context context-type="linenumber">1,2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/welcome/welcome.routes.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8055865154598499251" datatype="html">
+        <source>You will be redirected to Main page in 5 seconds</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/not-authorized/not-authorized.component.html</context>
+          <context context-type="linenumber">2,3</context>
         </context-group>
       </trans-unit>
       <trans-unit id="303433502826318614" datatype="html">
@@ -140,28 +165,28 @@
         <source>Users</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/welcome/welcome.routes.ts</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3797778920049399855" datatype="html">
         <source>Logout</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/welcome/welcome.routes.ts</context>
-          <context context-type="linenumber">35</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="2275328567992347600" datatype="html">
-        <source>Page not found</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/welcome/welcome.routes.ts</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5689987897661891535" datatype="html">
         <source>Admin Page</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/welcome/welcome.routes.ts</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2275328567992347600" datatype="html">
+        <source>Page not found</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/welcome/welcome.routes.ts</context>
+          <context context-type="linenumber">58</context>
         </context-group>
       </trans-unit>
     </body>

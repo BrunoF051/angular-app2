@@ -3,7 +3,6 @@ import { WelcomeComponent } from './welcome.component';
 import { PageNotFoundComponent } from 'pages/page-not-found/page-not-found.component';
 import { UsersComponent } from 'pages/users/users.component';
 import { LoggedOutComponent } from 'pages/logged-out/logged-out.component';
-import { authGuard } from 'app/guards/auth.guard';
 import { AdminPageComponent } from 'pages/admin-page/admin-page.component';
 import { KeycloakGuard } from 'app/guards/keycloak.guard';
 import { NotAuthorizedComponent } from 'pages/not-authorized/not-authorized.component';
