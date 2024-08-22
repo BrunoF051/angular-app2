@@ -25,6 +25,7 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { ModalConfirmComponent } from 'components/modal-confirm/modal-confirm.component';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -56,6 +57,8 @@ export class AppComponent {
   routes = APP_ROUTES;
   isLoggedIn = this.authorizationService.isLoggedIn();
   userRoles = this.authorizationService.getUserRoles();
+  username = '';
+
   deleteConfig = {
     title: 'Are you sure you want to log out?',
     description: 'You are going to be logged out.',
@@ -77,6 +80,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     if (this.authorizationService.isLoggedIn()) {
+      this.username = this.authorizationService.getUserName();
       this.userIdleService.startWatching();
       this.userIdleService
         .onTimerStart()
@@ -113,6 +117,9 @@ export class AppComponent {
       const isRoleRequired = data['roles'].length > 0;
       if (!isRoleRequired) {
         return !notShowingPaths.includes(path);
+      }
+      if (data['hiddenInMenu']) {
+        return false;
       }
       return data?.['roles']?.every((role: string) =>
         this.userRoles.includes(role),

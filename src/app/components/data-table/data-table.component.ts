@@ -34,7 +34,7 @@ export class DataTableComponent implements OnInit {
     pageSize: number,
     sortField: string | null,
     sortOrder: string | null,
-    filter: Array<{ key: string; value: string[] }>
+    filter: Array<{ key: string; value: string[] }>,
   ): void {
     this.loading = true;
     this.randomUserService

@@ -6,10 +6,12 @@ import { LoggedOutComponent } from 'pages/logged-out/logged-out.component';
 import { AdminPageComponent } from 'pages/admin-page/admin-page.component';
 import { KeycloakGuard } from 'app/guards/keycloak.guard';
 import { NotAuthorizedComponent } from 'pages/not-authorized/not-authorized.component';
+import { ProfilePageComponent } from 'pages/profile-page/profile-page.component';
 
 export enum AppRoutes {
   Main = '',
   Users = 'users',
+  Profile = 'profile/:username',
   Logout = 'logout',
   Admin = 'admin',
   NotAuthorized = 'not-authorized',
@@ -29,6 +31,13 @@ export const APP_ROUTES: Routes = [
     data: { roles: ['user'] },
     component: UsersComponent,
     title: $localize`Users`,
+  },
+  {
+    path: AppRoutes.Profile,
+    canActivate: [KeycloakGuard],
+    data: { roles: ['user'], hiddenInMenu: true },
+    component: ProfilePageComponent,
+    title: $localize`Profile`,
   },
   {
     path: AppRoutes.Logout,
@@ -57,5 +66,4 @@ export const APP_ROUTES: Routes = [
     title: $localize`Page not found`,
   },
   // ALlways keep NotFound as the last route
-
 ];

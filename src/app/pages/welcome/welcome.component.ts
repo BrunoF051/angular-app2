@@ -13,7 +13,6 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
 export class WelcomeComponent implements OnInit {
   constructor(private readonly authorizationService: AuthorizationService) {}
   isLoggedIn = this.authorizationService.isLoggedIn();
-
   redirectToLogin() {
     return this.authorizationService.redirectToLoginPage();
   }
