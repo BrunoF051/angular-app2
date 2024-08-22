@@ -7,6 +7,7 @@ import { AdminPageComponent } from 'pages/admin-page/admin-page.component';
 import { KeycloakGuard } from 'app/guards/keycloak.guard';
 import { NotAuthorizedComponent } from 'pages/not-authorized/not-authorized.component';
 import { ProfilePageComponent } from 'pages/profile-page/profile-page.component';
+import { profileGuard } from 'app/guards/profile.guard';
 
 export enum AppRoutes {
   Main = '',
@@ -34,7 +35,7 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: AppRoutes.Profile,
-    canActivate: [KeycloakGuard],
+    canActivate: [KeycloakGuard, profileGuard],
     data: { roles: ['user'], hiddenInMenu: true },
     component: ProfilePageComponent,
     title: $localize`Profile`,

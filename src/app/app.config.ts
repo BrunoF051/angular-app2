@@ -17,7 +17,6 @@ import { environment } from '../environments/environment';
 import { APP_INITIALIZER } from '@angular/core';
 import { KeycloakService } from 'keycloak-angular';
 import { provideUserIdleConfig } from 'angular-user-idle';
-
 registerLocaleData(it);
 
 const initializeKeycloak = (keycloak: KeycloakService) => async () =>

@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormValidateReactiveComponent } from 'components/form-validate-reactive/form-validate-reactive.component';
+import { TitleCasePipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-profile-page',
   standalone: true,
-  imports: [FormValidateReactiveComponent],
+  imports: [FormValidateReactiveComponent, CommonModule],
   templateUrl: './profile-page.component.html',
   styleUrl: './profile-page.component.scss',
 })
