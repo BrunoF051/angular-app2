@@ -1,0 +1,4 @@
+{
+  "jest.jestCommandLine": "ng test",
+  "jest.rootPath": "."
+}

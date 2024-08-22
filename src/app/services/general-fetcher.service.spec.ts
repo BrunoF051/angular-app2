@@ -1,16 +1,22 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
+import {
+  HttpClientTestingModule,
+  HttpTestingController
+} from "@angular/common/http/testing";
+import { GeneralFetcherService } from "./general-fetcher.service";
 
-import { GeneralFetcherService } from './general-fetcher.service';
-
-describe('GeneralFetcherService', () => {
+describe("GeneralFetcherService", () => {
   let service: GeneralFetcherService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [GeneralFetcherService]
+    });
     service = TestBed.inject(GeneralFetcherService);
   });
 
-  it('should be created', () => {
+  it("can load instance", () => {
     expect(service).toBeTruthy();
   });
 });
