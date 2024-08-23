@@ -20,6 +20,10 @@ export class AuthorizationService {
     return this.keycloakService.getUserRoles();
   }
 
+  getUserProfile() {
+    return this.keycloakService.loadUserProfile();
+  }
+
   isLoggedIn(): boolean {
     return this.keycloakService.isLoggedIn();
   }
